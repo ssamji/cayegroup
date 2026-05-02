@@ -41,7 +41,7 @@ export default function ToolSelector({ onSubmit, isLoading }: ToolSelectorProps)
         Which AI tools does your team use?
       </h2>
       <p className="text-gray-500 mb-6">
-        Select all that apply — we'll generate a personalized security report in seconds.
+        Select all that apply — we&apos;ll generate a personalized security report in seconds.
       </p>
 
       <div className="flex gap-2 mb-4">

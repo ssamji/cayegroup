@@ -33,7 +33,7 @@ export default function Home() {
       const data: SecurityReport = await res.json();
       setReport(data);
       setAppState('report');
-    } catch (err) {
+    } catch (_err) {
       setError('Something went wrong. Please try again.');
       setAppState('selecting');
     }
@@ -44,7 +44,7 @@ export default function Home() {
   try {
     await saveLead(name, email, selectedTools, report!);
     setAppState('unlocked');
-  } catch (err) {
+  } catch (_err) {
     setError('Something went wrong. Please try again.');
   } finally {
     setIsSubmitting(false);
