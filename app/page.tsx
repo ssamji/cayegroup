@@ -5,6 +5,7 @@ import ToolSelector from '@/components/ToolSelector';
 import ReportView from '@/components/ReportView';
 import EmailGate from '@/components/EmailGate';
 import { SecurityReport } from '@/types/report';
+import { saveLead } from '@/lib/actions';
 
 type AppState = 'selecting' | 'loading' | 'report' | 'email' | 'unlocked';
 
@@ -39,13 +40,16 @@ export default function Home() {
   };
 
   const handleEmailSubmit = async (name: string, email: string) => {
-    setIsSubmitting(true);
-    // Supabase lead capture comes in Phase 4
-    // For now just unlock the report
-    await new Promise(resolve => setTimeout(resolve, 800));
-    setIsSubmitting(false);
+  setIsSubmitting(true);
+  try {
+    await saveLead(name, email, selectedTools, report!);
     setAppState('unlocked');
-  };
+  } catch (err) {
+    setError('Something went wrong. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <main className="min-h-screen bg-gray-50">
