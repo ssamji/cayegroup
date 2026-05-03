@@ -1,9 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 import { anthropic } from '@/lib/anthropic';
 import { SecurityReport } from '@/types/report';
 
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(3, '1 h'),
+  analytics: true,
+});
+
 export async function POST(req: NextRequest) {
   try {
+    // Rate limiting by IP
+    const ip = req.headers.get('x-forwarded-for') ?? '127.0.0.1';
+    const { success, limit, reset, remaining } = await ratelimit.limit(ip);
+
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': limit.toString(),
+            'X-RateLimit-Remaining': remaining.toString(),
+            'X-RateLimit-Reset': reset.toString(),
+          },
+        }
+      );
+    }
+
     const { tools } = await req.json();
 
     if (!tools || !Array.isArray(tools) || tools.length === 0) {
