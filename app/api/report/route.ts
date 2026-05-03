@@ -3,6 +3,7 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { anthropic } from '@/lib/anthropic';
 import { SecurityReport } from '@/types/report';
+import { sanitizeTools } from '@/lib/sanitize';
 
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
@@ -30,14 +31,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { tools } = await req.json();
+const { tools: rawTools } = await req.json();
 
-    if (!tools || !Array.isArray(tools) || tools.length === 0) {
-      return NextResponse.json(
-        { error: 'tools array is required' },
-        { status: 400 }
-      );
-    }
+let tools: string[];
+try {
+  tools = sanitizeTools(rawTools);
+} catch (err) {
+  return NextResponse.json(
+    { error: err instanceof Error ? err.message : 'Invalid tools input' },
+    { status: 400 }
+  );
+}
 
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-5',
