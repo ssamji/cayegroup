@@ -143,6 +143,15 @@ export default function Home() {
         )}
 
       </div>
+      {/* Footer */}
+      <div className="text-center py-8 border-t border-gray-100 mt-12">
+        <a 
+          href="/privacy" 
+          className="text-sm text-gray-400 hover:text-gray-600 transition"
+        >
+          Privacy Policy
+        </a>
+</div>
     </main>
   );
 }
