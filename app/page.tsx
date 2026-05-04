@@ -58,11 +58,11 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white text-sm font-bold">CV</span>
+              <span className="text-white text-sm font-bold">CG</span>
             </div>
-            <span className="font-bold text-gray-900">ClearVector</span>
+            <span className="font-bold text-gray-900">Caye Group</span>
           </div>
-          <span className="text-sm text-gray-400">AI Security Risk Assessment</span>
+          <span className="text-sm text-gray-400">AI Security Risk Assessment by Caye Group</span>
         </div>
       </div>
 

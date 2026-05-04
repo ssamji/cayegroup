@@ -64,7 +64,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
-# ClearVector Project Context
+# Caye Group Project Context
 
 ## Who I Am
 I am a technical founder with 20+ years of application security experience,
@@ -72,11 +72,17 @@ specializing in DevSecOps and CI/CD pipeline security. This is my flagship
 product. Treat me as a peer — use correct security terminology, skip
 basic explanations, and push back if you see a better approach.
 
-## What ClearVector Is
-A Next.js 14 application that uses the Anthropic Claude API to generate
-AI security risk assessment reports for SMBs. The core value proposition
-is translating enterprise AppSec thinking into decisions a non-technical
-business owner can act on.
+## What Caye Group Is
+Caye Group is an AI security consulting practice and SaaS platform. The
+flagship tool is a Next.js 14 application that uses the Anthropic Claude API
+to generate AI security risk assessment reports for SMBs. The core value
+proposition is translating enterprise AppSec thinking into decisions a
+non-technical business owner can act on.
+
+## Brand
+Company name: Caye Group
+Domain: cayegroup.ai
+Slogan: AI is already in your business. We make sure security is too.
 
 ## Tech Stack
 - Next.js 14 App Router
