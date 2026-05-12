@@ -127,7 +127,7 @@ export async function sendReportEmail(
   `;
 
   const { data, error } = await resend.emails.send({
-    from: 'Caye Group <onboarding@resend.dev>',
+    from: 'Caye Group <shelina@cayegroup.ai',
     to: email,
     subject: `Your AI Security Report - Risk Level: ${riskLabel}`,
     html,
