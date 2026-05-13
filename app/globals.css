@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080f24;
+  --foreground: rgba(255,255,255,0.92);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Hairline borders for dark theme */
+  .border-hair  { border-color: rgba(255,255,255,0.07); }
+  .border-dim   { border-color: rgba(255,255,255,0.10); }
+  .border-low   { border-color: rgba(255,255,255,0.20); }
+
+  /* Text utilities */
+  .text-t-high  { color: rgba(255,255,255,0.92); }
+  .text-t-med   { color: rgba(255,255,255,0.60); }
+  .text-t-low   { color: rgba(255,255,255,0.35); }
 }
