@@ -24,21 +24,21 @@ export default function Nav() {
           </li>
           <li className="hidden sm:block">
             <Link href="/assess" className="text-t-med text-sm font-medium no-underline hover:text-white transition">
-              Assessment
+              Free Assessment
             </Link>
           </li>
           <li className="hidden sm:block">
-            <Link href="/privacy" className="text-t-med text-sm font-medium no-underline hover:text-white transition">
-              Privacy
+            <Link href="/services" className="text-t-med text-sm font-medium no-underline hover:text-white transition">
+              Services
             </Link>
           </li>
           <li>
             <Link
-              href="/assess"
+              href="#about"
               className="bg-amber text-[#3b1500] font-sora font-bold text-sm
                          px-5 py-2.5 rounded-lg no-underline hover:bg-amber-lt transition"
             >
-              Free Assessment
+              Book a Call
             </Link>
           </li>
         </ul>
