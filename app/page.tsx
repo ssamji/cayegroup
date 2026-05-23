@@ -176,7 +176,7 @@ export default function HomePage() {
           The risk is already inside your business.
         </h2>
         <p className="text-[17px] text-t-med max-w-[560px] leading-[1.68] mb-14">
-          You don't need to be the target of an attack for AI to create a problem. Most of the risk is already there, quietly.
+          You don&apos;t need to be the target of an attack for AI to create a problem. Most of the risk is already there, quietly.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
