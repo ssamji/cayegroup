@@ -2,8 +2,20 @@ import Link from 'next/link';
 import Nav from '@/components/Nav';
 
 export const metadata = {
-  title: 'Caye Group — AI Security for Small Business',
-  description: 'Your team is already using AI. Find out what that means for your business — free risk check in 30 seconds.',
+  title: 'Caye Group — AI Security for Small & Medium Business',
+  description: 'Your team is already using AI tools with no visibility into what data is leaving your business. Get your free AI security risk report in 30 seconds — no technical knowledge required.',
+  openGraph: {
+    title: 'Is Your Team Using AI Securely? | Caye Group',
+    description: 'Most small businesses are using 5+ AI tools with no visibility into what data is leaving the building. Find out where you stand — free, in 30 seconds.',
+    url: 'https://www.cayegroup.ai',
+    siteName: 'Caye Group',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Is Your Team Using AI Securely? | Caye Group',
+    description: 'Most small businesses are using 5+ AI tools with no visibility into what data is leaving the building. Find out where you stand — free, in 30 seconds.',
+  },
 };
 
 export default function HomePage() {
@@ -12,7 +24,7 @@ export default function HomePage() {
       <Nav />
 
       {/* ── HERO ── */}
-      <section className="bg-navy-1 px-[6%] pt-24 pb-28 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center relative overflow-hidden">
+      <section className="bg-navy-1 px-[6%] pt-14 pb-16 lg:pt-24 lg:pb-28 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center relative overflow-hidden">
         <div className="absolute top-[-120px] right-[-120px] w-[520px] h-[520px] rounded-full
                         bg-[radial-gradient(circle,rgba(37,99,235,0.14)_0%,transparent_68%)] pointer-events-none" />
         <div className="absolute bottom-[-80px] left-[30%] w-[300px] h-[300px] rounded-full
@@ -39,18 +51,18 @@ export default function HomePage() {
             what data is leaving the building. Find out where you stand — in 30 seconds.
           </p>
 
-          <div className="flex gap-3 flex-wrap mb-4">
+          <div className="flex flex-col sm:flex-row gap-3 mb-4">
             <Link href="/assess"
               className="bg-blue text-white font-sora font-bold text-[15px] px-7 py-3.5
-                         rounded-lg no-underline flex items-center gap-2 hover:bg-blue-lt transition">
-              Check My Risk — Free
+                         rounded-lg no-underline flex items-center justify-center gap-2 hover:bg-blue-lt transition">
+              Get My Free Risk Report
               <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                 <path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
             <a href="#about"
               className="bg-transparent text-white font-sora font-semibold text-[15px] px-6 py-3.5
-                         rounded-lg no-underline border border-t-dim flex items-center gap-2
+                         rounded-lg no-underline border border-t-dim flex items-center justify-center gap-2
                          hover:border-white/35 hover:bg-t-hair transition">
               Book a Call
             </a>
@@ -78,12 +90,12 @@ export default function HomePage() {
         </div>
 
         {/* Hero visual */}
-        <div className="relative z-10 hidden lg:block">
+        <div className="relative z-10 mt-8 lg:mt-0">
           <div className="bg-navy-3 rounded-2xl border border-navy-5 overflow-hidden shadow-[0_32px_72px_rgba(0,0,0,0.5)]">
             <div className="bg-navy-4 px-6 py-5 flex justify-between items-start border-b border-t-hair">
               <div>
                 <p className="text-[10px] font-bold font-sora uppercase tracking-[0.09em] text-t-low mb-1">AI Risk Report</p>
-                <p className="font-sora font-bold text-white text-[16px]">Acme Law Group</p>
+                <p className="font-sora font-bold text-white text-[16px]">Your Business</p>
               </div>
               <span className="bg-red/15 border border-red/35 text-red-300 text-[10px] font-bold font-sora px-2.5 py-1 rounded-md tracking-[0.05em]">HIGH RISK</span>
             </div>
@@ -136,17 +148,6 @@ export default function HomePage() {
               without a dedicated security team. The difference is we spent two decades inside
               enterprise security, and we&apos;re bringing that expertise to businesses our own size.
             </p>
-            <div className="flex gap-10 mt-8 flex-wrap">
-              {[
-                { n: '20+', l: 'Years in enterprise security' },
-                { n: '5 days', l: 'From check to full report' },
-              ].map(s => (
-                <div key={s.n}>
-                  <p className="font-sora font-bold text-[28px] text-amber-lt leading-none mb-1">{s.n}</p>
-                  <p className="text-[13px] text-t-low">{s.l}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="bg-navy-3 border border-navy-5 rounded-2xl p-8">
@@ -172,10 +173,10 @@ export default function HomePage() {
       <section className="px-[6%] py-[88px]">
         <p className="text-[11px] font-bold font-sora uppercase tracking-[0.1em] text-amber mb-3">Sound Familiar?</p>
         <h2 className="font-sora text-[clamp(28px,3vw,42px)] font-bold tracking-[-0.022em] leading-[1.16] text-white mb-3">
-          This is what&apos;s happening in most small businesses right now.
+          The risk is already inside your business.
         </h2>
         <p className="text-[17px] text-t-med max-w-[560px] leading-[1.68] mb-14">
-          None of this requires a breach to be a problem. The risk is already there.
+          You don't need to be the target of an attack for AI to create a problem. Most of the risk is already there, quietly.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -213,14 +214,19 @@ export default function HomePage() {
               bg: 'bg-blue/10 border-blue/20',
               icon: (
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <path d="M5 5h9l9 9-9 9-9-9V5Z" stroke="#3b82f6" strokeWidth="1.6" strokeLinejoin="round"/>
-                  <circle cx="10" cy="10" r="1.5" fill="#3b82f6"/>
-                  <line x1="14" y1="12" x2="14" y2="18" stroke="#3b82f6" strokeWidth="1.4" strokeLinecap="round"/>
-                  <path d="M12 13.5c0-.83.67-1.5 1.5-1.5h1a1.5 1.5 0 0 1 0 3h-1a1.5 1.5 0 0 0 0 3h1c.83 0 1.5-.67 1.5-1.5" stroke="#3b82f6" strokeWidth="1.3" strokeLinecap="round"/>
+                  {/* Document with eye — Copilot seeing your files */}
+                  <rect x="4" y="3" width="14" height="18" rx="2" stroke="#3b82f6" strokeWidth="1.6"/>
+                  <line x1="7" y1="8" x2="15" y2="8" stroke="#3b82f6" strokeWidth="1.3" strokeLinecap="round" opacity="0.5"/>
+                  <line x1="7" y1="11.5" x2="15" y2="11.5" stroke="#3b82f6" strokeWidth="1.3" strokeLinecap="round" opacity="0.5"/>
+                  <line x1="7" y1="15" x2="12" y2="15" stroke="#3b82f6" strokeWidth="1.3" strokeLinecap="round" opacity="0.5"/>
+                  {/* Eye overlapping bottom right */}
+                  <circle cx="20" cy="20" r="7" fill="#111d40" stroke="#3b82f6" strokeWidth="1.4"/>
+                  <ellipse cx="20" cy="20" rx="4" ry="2.5" stroke="#3b82f6" strokeWidth="1.3"/>
+                  <circle cx="20" cy="20" r="1.3" fill="#3b82f6"/>
                 </svg>
               ),
-              title: 'You think proper security is too expensive or complicated',
-              body: 'It doesn\'t have to be. The right guidance doesn\'t cost $30,000 or require a full-time IT team.',
+              title: 'Microsoft Copilot is probably already on — and it can see more than you think',
+              body: 'If your team uses Microsoft 365, Copilot may already be active. It can surface documents, emails, and internal files based on existing permissions — including permissions most businesses don\'t realize they\'ve granted.',
             },
           ].map(card => (
             <div key={card.title} className={`bg-navy-3 rounded-2xl border ${card.bg} p-8 hover:translate-y-[-2px] transition`}>
@@ -314,7 +320,7 @@ export default function HomePage() {
         <Link href="/assess"
           className="bg-blue text-white font-sora font-bold text-[15px] px-8 py-4
                      rounded-xl no-underline inline-flex items-center gap-2 hover:bg-blue-lt transition">
-          Check My Risk — Free
+          Get My Free Risk Report
           <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
             <path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -326,11 +332,14 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-[6%] py-16 grid grid-cols-1 sm:grid-cols-[1.5fr_1fr_1fr] gap-10">
           <div>
             <Link href="/" className="flex items-center gap-2.5 no-underline mb-3">
-              <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 2L3 5.5V10.5C3 14.5 6.1 18.2 10 19C13.9 18.2 17 14.5 17 10.5V5.5L10 2Z" fill="white" fillOpacity="0.92"/>
-                </svg>
-              </div>
+              <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="9" fill="#162248"/>
+                <circle cx="20" cy="20" r="11" stroke="#2563eb" strokeWidth="1.5" fill="none" opacity="0.5"/>
+                <circle cx="20" cy="20" r="7" stroke="#2563eb" strokeWidth="1.5" fill="#162248"/>
+                <circle cx="20" cy="20" r="4.5" fill="#2563eb"/>
+                <circle cx="20" cy="20" r="2" fill="#f59e0b"/>
+                <circle cx="18.8" cy="18.8" r="0.7" fill="white" opacity="0.9"/>
+              </svg>
               <span className="font-sora font-bold text-white text-[15px]">Caye Group</span>
             </Link>
             <p className="text-[13px] text-t-low leading-[1.6] max-w-[210px]">

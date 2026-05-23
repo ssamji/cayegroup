@@ -1,7 +1,11 @@
 import Nav from '@/components/Nav';
 
 export const metadata = {
-  title: 'Privacy Policy — Caye Group',
+  title: 'Privacy Policy | Caye Group',
+  description: 'Privacy policy for Caye Group and the AI Security Risk Assessment tool. 2456867 Ontario Inc., operating as Caye Group.',
+  robots: {
+    index: false,
+  },
 };
 
 export default function PrivacyPolicy() {
