@@ -60,7 +60,7 @@ export default function HomePage() {
                 <path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <a href="#about"
+            <a href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer"
               className="bg-transparent text-white font-sora font-semibold text-[15px] px-6 py-3.5
                          rounded-lg no-underline border border-t-dim flex items-center justify-center gap-2
                          hover:border-white/35 hover:bg-t-hair transition">
@@ -347,7 +347,7 @@ export default function HomePage() {
             </p>
           </div>
           {[
-            { h: 'Company', links: [{ l: 'Home', h: '/' }, { l: 'Services', h: '/services' }, { l: 'Free Risk Check', h: '/assess' }, { l: 'Book a Call', h: '#about' }] },
+            { h: 'Company', links: [{ l: 'Home', h: '/' }, { l: 'Services', h: '/services' }, { l: 'Free Risk Check', h: '/assess' }, { l: 'Book a Call', h: 'https://calendly.com/ssamji01/30min' }] },
             { h: 'Legal', links: [{ l: 'Privacy Policy', h: '/privacy' }] },
           ].map(col => (
             <div key={col.h}>

@@ -122,7 +122,7 @@ export default function ServicesPage() {
               ))}
             </ul>
             <div className="pt-6 border-t border-t-hair">
-              <Link href="#contact"
+              <Link href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer"
                 className="text-amber-lt font-sora font-semibold text-[14px] no-underline
                            flex items-center gap-2 hover:text-white transition">
                 Book a call to get started
@@ -170,7 +170,7 @@ export default function ServicesPage() {
               ))}
             </ul>
             <div className="pt-6 border-t border-t-hair">
-              <Link href="#contact"
+              <Link href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer"
                 className="text-green font-sora font-semibold text-[14px] no-underline
                            flex items-center gap-2 hover:text-white transition">
                 Book a call to get started
@@ -243,7 +243,7 @@ export default function ServicesPage() {
               <path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
-          <Link href="#contact"
+          <Link href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer"
             className="bg-transparent text-white font-sora font-semibold text-[15px] px-8 py-4
                        rounded-xl no-underline inline-flex items-center justify-center gap-2
                        border border-t-dim hover:border-white/35 hover:bg-t-hair transition">

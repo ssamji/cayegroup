@@ -48,7 +48,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="#about"
+              href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer"
               className="bg-amber text-[#3b1500] font-sora font-bold text-sm
                          px-5 py-2.5 rounded-lg no-underline hover:bg-amber-lt transition"
             >
@@ -82,7 +82,7 @@ export default function Nav() {
             className="text-t-med text-[15px] font-medium no-underline hover:text-white py-3 border-b border-t-hair transition">
             Services
           </Link>
-          <Link href="#about" onClick={() => setOpen(false)}
+          <Link href="https://calendly.com/ssamji01/30min" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
             className="mt-3 bg-amber text-[#3b1500] font-sora font-bold text-[15px]
                        px-5 py-3 rounded-lg no-underline text-center hover:bg-amber-lt transition">
             Book a Call
